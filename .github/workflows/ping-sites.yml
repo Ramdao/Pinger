@@ -1,0 +1,20 @@
+name: Ping AI Recipe Sites
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Every day at midnight UTC
+  workflow_dispatch:      # Optional: allows manual triggering
+
+jobs:
+  ping-sites:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call ai-recipe-generator-search-1
+        run: curl -s https://ai-recipe-generator-search-1.onrender.com
+
+      - name: Call ai-recipe-generator-search
+        run: curl -s https://ai-recipe-generator-search.onrender.com
+
+      - name: Call ai-receipe-generator-1 (note spelling)
+        run: curl -s https://ai-receipe-generator-1.onrender.com
