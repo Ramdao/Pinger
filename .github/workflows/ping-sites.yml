@@ -2,7 +2,7 @@ name: Ping AI Recipe Sites
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Every day at midnight UTC
+    - cron: '*/5 * * * *'  # Every 5 minutes
   workflow_dispatch:      # Optional: allows manual triggering
 
 jobs:
@@ -18,3 +18,9 @@ jobs:
 
       - name: Call ai-receipe-generator-1 (note spelling)
         run: curl -s https://ai-receipe-generator-1.onrender.com
+      
+      - name: Call Exposed API
+        run: curl -s https://jassignment1.onrender.com
+
+      - name: Call Game Search with AI
+        run: curl -s https://game-search-with-ai.onrender.com
